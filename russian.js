@@ -17,9 +17,9 @@
             const shift = key[key_index].toLowerCase().charCodeAt(0) - 'а'.charCodeAt(0);
             let new_char;
             if (mode === 'encrypt') {
-              new_char = String.fromCharCode((char.toLowerCase().charCodeAt(0) - 'а'.charCodeAt(0) + shift) % 34 + 'а'.charCodeAt(0));
+              new_char = String.fromCharCode((char.toLowerCase().charCodeAt(0) - 'а'.charCodeAt(0) + shift) % 32 + 'а'.charCodeAt(0));
             } else if (mode === 'decrypt') {
-              new_char = String.fromCharCode((char.toLowerCase().charCodeAt(0) - 'а'.charCodeAt(0) - shift + 34) % 34 + 'а'.charCodeAt(0));
+              new_char = String.fromCharCode((char.toLowerCase().charCodeAt(0) - 'а'.charCodeAt(0) - shift + 32) % 32 + 'а'.charCodeAt(0));
             }
             result += char === char.toLowerCase() ? new_char : new_char.toUpperCase();
             key_index = (key_index + 1) % key.length;
